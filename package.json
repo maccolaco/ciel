@@ -23,7 +23,6 @@
     "react-dom": "^18.3.1",
     "tailwindcss-animate": "^1.0.7",
     "@tauri-apps/api": "^1.5.1",
-    "@tauri-apps/plugin-fs": "^1.0.0",
     "recharts": "^2.8.0",
     "axios": "^1.6.2",
     "zustand": "^4.4.7",
