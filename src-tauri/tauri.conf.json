@@ -27,8 +27,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
-    "icon": []
+    "targets": "all"
   },
   "plugins": {
     "fs": {
