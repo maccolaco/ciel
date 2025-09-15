@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { PortfolioUpload } from '@/components/portfolio-upload'
-import { PortfolioTable } from '@/components/portfolio-table'
-import { PortfolioSummary } from '@/components/portfolio-summary'
-import { PortfolioCharts } from '@/components/portfolio-charts'
-import { RiskMetrics } from '@/components/risk-metrics'
-import { usePortfolioStore } from '@/lib/store'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { PortfolioUpload } from './components/portfolio-upload'
+import { PortfolioTable } from './components/portfolio-table'
+import { PortfolioSummary } from './components/portfolio-summary'
+import { PortfolioCharts } from './components/portfolio-charts'
+import { RiskMetrics } from './components/risk-metrics'
+import { usePortfolioStore } from './lib/store'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
 
-export default function Page() {
+export default function App() {
   const { holdings } = usePortfolioStore()
   const [activeTab, setActiveTab] = useState('overview')
 
