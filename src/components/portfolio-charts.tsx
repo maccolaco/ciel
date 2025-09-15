@@ -10,7 +10,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   LineChart,
   Line
 } from 'recharts'
@@ -157,9 +156,12 @@ export function PortfolioCharts() {
               <Tooltip content={<CustomTooltip />} />
               <Bar 
                 dataKey="gainLoss" 
-                fill={(entry) => entry >= 0 ? '#00C49F' : '#FF8042'}
+                fill="#0088FE"
                 name="Gain/Loss"
               />
+              {gainLossData.slice(0, 10).map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.gainLoss >= 0 ? '#00C49F' : '#FF8042'} />
+              ))}
             </BarChart>
           </ResponsiveContainer>
         </CardContent>

@@ -57,6 +57,9 @@ export async function fetchMultipleStockPrices(symbols: string[]): Promise<Recor
 
 export async function fetchStockInfo(symbol: string) {
   try {
+    // For demo purposes, return mock data
+    // In production, uncomment the API call below
+    /*
     const response = await axios.get(BASE_URL, {
       params: {
         function: 'OVERVIEW',
@@ -71,10 +74,20 @@ export async function fetchStockInfo(symbol: string) {
       beta: parseFloat(response.data.Beta) || 1.0,
       dividend: parseFloat(response.data.DividendYield) || 0
     }
+    */
+    
+    // Mock data for demo
+    const mockSectors = ['Technology', 'Healthcare', 'Finance', 'Energy', 'Consumer', 'Industrial']
+    return {
+      name: `${symbol} Inc`,
+      sector: mockSectors[Math.floor(Math.random() * mockSectors.length)],
+      beta: 0.8 + Math.random() * 0.4, // Random beta between 0.8 and 1.2
+      dividend: Math.random() * 3 // Random dividend yield 0-3%
+    }
   } catch (error) {
     console.error(`Error fetching info for ${symbol}:`, error)
     return {
-      name: symbol,
+      name: `${symbol} Inc`,
       sector: 'Unknown',
       beta: 1.0,
       dividend: 0
